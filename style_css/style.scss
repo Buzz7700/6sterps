@@ -295,6 +295,7 @@ footer {
 
     // footB
     .footB {
+      max-width: $LWidth;
       div {
         margin-bottom: 20px;
       }
@@ -310,13 +311,14 @@ footer {
         margin: 0;
         padding: 0;
         list-style: none;
+        font-size: 12px;
       }
 
       a {
         display: block;
         padding: 5px;
         color: inherit;
-        font-size: 12px;
+
         text-decoration: none;
         &:hover {
           background-color: rgba(0, 0, 0, 0.3);
@@ -327,12 +329,12 @@ footer {
     @media (min-width: 768px) {
       .footB {
         display: flex;
+
         div {
           flex: 1;
           &:not(:first-child) {
             // 学習メモ:否定擬似クラスで最初の要素以外にmargin-left:40pxを付与する
             margin-left: 40px;
-            font-size: 12px;
           }
         }
       }
@@ -362,7 +364,7 @@ footer {
         flex: 0 0 40%;
       }
       .footB {
-        flex: 0 0 40%;
+        flex: 0 0 60%;
       }
       .footC {
         flex: 0 0 100%;
