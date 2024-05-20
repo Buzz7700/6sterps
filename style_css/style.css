@@ -168,6 +168,9 @@ footer .container .footA .footD a {
 footer .container .footA .footD a:hover {
   background-color: rgba(0, 0, 0, 0.3);
 }
+footer .container .footB {
+  max-width: 1000px;
+}
 footer .container .footB div {
   margin-bottom: 20px;
 }
@@ -181,12 +184,12 @@ footer .container .footB ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  font-size: 12px;
 }
 footer .container .footB a {
   display: block;
   padding: 5px;
   color: inherit;
-  font-size: 12px;
   text-decoration: none;
 }
 footer .container .footB a:hover {
@@ -201,7 +204,6 @@ footer .container .footB a:hover {
   }
   footer .container .footB div:not(:first-child) {
     margin-left: 40px;
-    font-size: 12px;
   }
 }
 footer .container .footC {
@@ -221,7 +223,7 @@ footer .container .footC {
     flex: 0 0 40%;
   }
   footer .container .footB {
-    flex: 0 0 40%;
+    flex: 0 0 60%;
   }
   footer .container .footC {
     flex: 0 0 100%;
