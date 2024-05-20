@@ -1,10 +1,989 @@
+@charset "UTF-8";
+// よく使う変数の定義
+
 // 基本色
 $MColor: #5d9ab2; // メインカラー
-$AColor: #bf7785; // アクセントカラー
-$DColor: #2b5565; // ダークカラー
-$TBColor: #2b5565; // テキストブライトカラー
+$AColor: #bf6a7a; // アクセントカラー
+$DColor: #2b5566; // ダークカラー
+$IWColor: #ffffff; // ホワイトのアイコンカラー
+$GColor: #dddddd; // グレーカラー
 
-header {
-  display: block;
-  width: 100%;
+$SWhite: #ffffff; // ホワイト
+$SBlack: #000000; // ブラック
+
+// サイズ
+$LWidth: 1000px;
+$MWidth: 800px;
+
+// フォントサイズ
+@media (max-width: 599px) {
+  :root {
+    font-size: 14px;
+  }
 }
+
+@media (min-width: 600px) and (max-width: 799px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 800px) {
+  :root {
+    font-size: 18px;
+  }
+}
+
+body {
+  font-size: 16px;
+}
+
+// 要素を上下中央に配置する変数
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /**
+  @extends .flex-center と記述して使用
+   */
+}
+
+// ここからスタイルの記述
+
+////// 各ページ共通のCSS common CSS
+
+body {
+  margin: 0;
+  font-family: "メイリオ", "ヒラギノ角ゴProN", "sans-serif";
+  position: relative;
+}
+
+//// header
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+
+  // headA
+  .headA {
+    display: inline-block;
+    line-height: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: $MColor;
+    color: $SWhite;
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    text-decoration: none;
+  }
+  // End of headA
+
+  // headB
+  .headB {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    a {
+      display: block;
+      padding: 15px;
+      color: inherit;
+      font-size: 12px;
+      text-decoration: none;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+  // End of headB
+}
+
+.nohero {
+  header {
+    position: static;
+    border-bottom: solid 1px $GColor;
+  }
+}
+
+// 画面幅が768px以上の時のレイアウト
+@media (min-width: 768px) {
+  header {
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: $LWidth;
+      margin-left: auto;
+      margin-right: auto;
+      .headB ul {
+        display: flex;
+      }
+    }
+  }
+}
+
+// トグルボタンの設定の記述
+@media (max-width: 767px) {
+  header {
+    .container-small {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .headC {
+      margin-right: 10px;
+      padding: 0;
+      border: none;
+      outline: none;
+      background: none;
+      font-size: 28px;
+      opacity: 0.5;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.3;
+      }
+    }
+
+    .headB {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .headC {
+    display: none;
+  }
+
+  .headB {
+    display: block !important;
+  }
+}
+
+//// End of header
+
+//// footer
+footer {
+  color: $SWhite;
+  background-color: $DColor;
+
+  .container {
+    padding: 40px 20px;
+
+    // footA
+    .footA {
+      margin-bottom: 30px;
+      h2 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 30px;
+        letter-spacing: 0.2em;
+      }
+
+      p {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 14px;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      // footD
+      .footD {
+        margin-top: 20px;
+        ul {
+          display: flex;
+          margin: 0;
+          padding: 0;
+          list-style: none;
+        }
+
+        a {
+          display: block;
+          margin-right: 8px;
+          padding: 0;
+          color: inherit;
+          font-size: 16px;
+          text-decoration: none;
+          border: solid 1px currentColor;
+          width: 2em;
+          line-height: 2em;
+          border-radius: 50%;
+          text-align: center;
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+          }
+        }
+      }
+      // End of footD
+    }
+    // End of footA
+
+    // footB
+    .footB {
+      div {
+        margin-bottom: 20px;
+      }
+
+      h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        border-bottom: solid 1px currentColor;
+        font-size: 14px;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      a {
+        display: block;
+        padding: 5px;
+        color: inherit;
+        font-size: 12px;
+        text-decoration: none;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+
+    @media (min-width: 768px) {
+      .footB {
+        display: flex;
+        div {
+          flex: 1;
+          &:not(:first-child) {
+            // 学習メモ:否定擬似クラスで最初の要素以外にmargin-left:40pxを付与する
+            margin-left: 40px;
+          }
+        }
+      }
+    }
+    // End of footB
+
+    // footC : コピーライト
+    .footC {
+      font-size: 12px;
+      text-align: center;
+      font-family: "Montserrat", sans-serif;
+    }
+    // End of footC
+  }
+}
+
+// 画面幅が768px以上になるとレイアウトを切り替える
+
+@media (min-width: 768px) {
+  footer {
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: $LWidth;
+      margin: 0 auto;
+      .footA {
+        flex: 0 0 40%;
+      }
+      .footB {
+        flex: 0 0 40%;
+      }
+      .footC {
+        flex: 0 0 100%;
+      }
+    }
+  }
+}
+
+//// End of footer
+
+////// End of 各ページ共通のCSS common CSS
+
+////// トップページ index.html
+
+//// conA ヒーローイメージ
+.conA {
+  @extend .flex-center;
+  height: 100vh;
+  min-height: 450px;
+  // ええ感じにグラデーションを作りたいのでliner-gradientを使う
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url(../design-comp/img/fruits.jpg);
+
+  // 背景の写真と見出しのスタイル
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  color: $SWhite;
+  text-align: center;
+
+  &.compact {
+    height: 450px;
+    min-height: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+      url(../design-comp/img/balloon.jpg);
+  }
+  // LOGGERの文字の調整
+  h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15vw;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    margin-left: 0.2em;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 18px;
+  }
+
+  img {
+    width: 20%;
+  }
+
+  a {
+    display: inline-block; // inline-blockは要素は横並びにしたいけど、横幅・高さや余白を調整したい時に使う
+    margin-top: 20px;
+    padding: 10px 30px;
+    border: solid 3px currentColor;
+    border-radius: 6px;
+    background-color: #bf6a7a;
+    background-color: $AColor;
+    color: #fff;
+    color: $SWhite;
+    font-size: 14px;
+    text-decoration: none;
+    &:hover {
+      // リンクにマウスをホバーした時に、文字の後ろに薄いグレーのフィルターをかける
+      background-image: linear-gradient(
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.2)
+      );
+    }
+  }
+}
+
+// 画面幅が768px以上になると見出しと文章の文字の大きさを切り替える
+@media (min-width: 768px) {
+  .conA {
+    h1 {
+      font-size: 115px;
+    }
+
+    p {
+      font-size: 24px;
+    }
+  }
+}
+
+//// End of conA ヒーローイメージ
+
+//// conB コンテンツB
+
+.conB {
+  .container {
+    padding-top: 80px;
+    padding-bottom: 20px;
+  }
+
+  .text {
+    padding: 0 20px 60px 20px;
+    text-align: center;
+  }
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.8;
+    opacity: 0.8;
+  }
+
+  a {
+    color: $MColor;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .icon {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 40px;
+    width: 2em;
+    line-height: 2em;
+    border-radius: 50%;
+    text-align: center;
+    background-color: $GColor;
+    color: $IWColor;
+  }
+}
+
+// 画面幅が768px以上になると見出しと文章の文字の大きさを切り替える
+@media (min-width: 768px) {
+  .conB {
+    .container {
+      display: flex;
+      max-width: $LWidth;
+      margin: 0 auto;
+    }
+
+    .text {
+      flex: 1;
+    }
+  }
+}
+
+//// End of conB コンテンツB
+
+//// conC コンテンツC
+
+.conC {
+  background-color: $MColor;
+  color: $SWhite;
+
+  .text {
+    padding: 20px;
+  }
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.8;
+    opacity: 0.8;
+  }
+
+  a {
+    margin-top: 20px;
+    padding: 10px 30px;
+    border: solid 3px currentColor;
+    border-radius: 6px;
+    background-color: $AColor;
+    color: $SWhite;
+    font-size: 14px;
+    text-decoration: none;
+    &:hover {
+      // リンクにマウスをホバーした時に、文字の後ろに薄いグレーのフィルターをかける
+      background-image: linear-gradient(
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.2)
+      );
+    }
+  }
+  .photo {
+    min-height: 200px;
+    background-image: url(../design-comp/img/note.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+// 画面幅が768px以上になると見出しと文章の文字の大きさを切り替える
+
+@media (min-width: 768px) {
+  .conC {
+    .container {
+      display: flex;
+      max-width: $LWidth;
+      margin: 0 auto;
+    }
+
+    .photo {
+      flex: 3;
+    }
+    .text {
+      flex: 2;
+      padding: 50px;
+    }
+  }
+}
+//// End of conC コンテンツC
+
+//// conD コンテンツD
+
+.conD {
+  .container {
+    padding-top: 2px;
+  }
+
+  .text {
+    padding: 20px;
+  }
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.8;
+    opacity: 0.8;
+  }
+
+  a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 30px;
+    box-shadow: 0 0 0 1px;
+    border: solid 3px currentColor;
+    border-radius: 6px;
+    background-color: $AColor;
+    color: $SWhite;
+    font-size: 14px;
+    text-decoration: none;
+    &:hover {
+      // リンクにマウスをホバーした時に、文字の後ろに薄いグレーのフィルターをかける
+      background-image: linear-gradient(
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.2)
+      );
+    }
+  }
+
+  .photo {
+    min-height: 200px;
+    background-image: url(../design-comp/img/life.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+// 画面幅が768px以上になると見出しと文章の文字の大きさを切り替える
+
+@media (min-width: 768px) {
+  .conD {
+    .container {
+      display: flex;
+      flex-direction: row-reverse;
+      max-width: $LWidth;
+      margin: 0 auto;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    .photo {
+      flex: 0 0 400px;
+    }
+
+    .text {
+      flex: 1;
+      padding: 50px;
+    }
+  }
+}
+//// End of conD コンテンツD
+
+////// End of index.html トップページ
+
+////// contents.html
+
+.post {
+  .container {
+    max-width: $MWidth;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 10px;
+  }
+
+  h1 {
+    margin: 24px 0;
+    padding-left: 0.5rem;
+    border-left: solid 0.75rem $AColor;
+    font-size: 2rem;
+  }
+
+  p {
+    margin-top: 10px;
+    font-size: 1rem;
+    line-height: 2;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+// パンクズリスト
+.bread {
+  ol {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    display: block;
+    padding: 5px;
+    color: inherit;
+    font-size: 0.875rem;
+    text-decoration: none;
+  }
+
+  a::after {
+    margin-left: 10px;
+    content: "\f054";
+    font-family: "FontAwesome";
+    opacity: 0.3;
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+////// End of contents.html コンテンツ　ページ
+
+////// about.html  アバウトページ
+///
+/// /* アバウトページ： 画像と沿革 */
+.history {
+  background-color: $MColor;
+  color: $SWhite;
+  .text {
+    padding: 20px;
+  }
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+  }
+
+  .photo {
+    min-height: 300px;
+    background-image: url(/design-comp/img/plant.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  .table {
+    border-collapse: collapse;
+    border-top: solid 1px $GColor;
+    font-size: 0.875rem;
+  }
+
+  th,
+  td {
+    padding-top: 1.8rem;
+    padding-bottom: 1.8rem;
+    border-bottom: solid 1px $GColor;
+  }
+
+  th {
+    padding-right: 1rem;
+    text-align: left;
+    word-break: keep-all;
+  }
+}
+
+@media (min-width: 768px) {
+  .history {
+    .container {
+      display: flex;
+      max-width: 1000px;
+      max-width: var(--large-width);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .photo {
+      flex: 3;
+    }
+
+    .text {
+      flex: 2;
+      padding: 50px;
+    }
+  }
+}
+
+////// End of about.html アバウトページ
+
+////// contact.html お問い合わせ
+
+.contact {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: solid 1px $GColor;
+  text-align: center;
+
+  span {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+    width: 2em;
+    line-height: 2em;
+    border-radius: 50%;
+    text-align: center;
+    background-color: $MColor;
+    color: $SWhite;
+  }
+
+  h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+  }
+
+  a {
+    font-size: 1.4rem;
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-wrap {
+    display: flex;
+  }
+
+  .contact {
+    flex: 1;
+  }
+
+  .contact:first-child {
+    margin-right: 20px;
+  }
+}
+
+.location iframe {
+  width: 100%;
+  height: 400px;
+  vertical-align: bottom;
+}
+
+.location h2 {
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #5d9ab2;
+  background-color: $MColor;
+  color: $SWhite;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+////// End of contact.html お問い合わせ
+
+//////  list-a.html 記事一覧A
+
+.listA {
+  h1 {
+    text-align: center;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: $LWidth;
+    margin: 30px auto;
+  }
+
+  article {
+    flex: 1 1 300px;
+    display: flex;
+  }
+
+  a {
+    flex: 1;
+    margin: 10px;
+    display: block;
+    border: solid 1px $GColor;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a:hover {
+    opacity: 0.8;
+  }
+
+  .photo {
+    min-height: 150px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .text {
+    margin: 10px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+}
+
+//////  End of list-a.html 記事一覧A
+
+//////  list-a.html 記事一覧B
+
+.listB {
+  h1 {
+    text-align: center;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: $LWidth;
+    margin: 30px auto;
+  }
+
+  article {
+    flex: 1 1 384px;
+    display: flex;
+  }
+
+  a {
+    flex: 1;
+    margin: 10px;
+    display: flex;
+    border: solid 1px $GColor;
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .photo {
+    flex: 2;
+    min-height: 0;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .text {
+    flex: 3;
+    margin: 10px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+}
+@media (max-width: 384px) {
+  .listB {
+    .photo {
+      flex: 1;
+    }
+
+    p {
+      display: none;
+    }
+  }
+}
+
+//////  End of list-b.html 記事一覧B
+
+//////  list-c.html 記事一覧C
+
+.listC {
+  h1 {
+    text-align: center;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: none;
+    margin: 2px auto;
+  }
+
+  article {
+    flex: 1 1 250px;
+    display: flex;
+  }
+
+  a {
+    position: relative;
+    flex: 1;
+    margin: 2px;
+    display: block;
+    border: solid 1px $GColor;
+    background-color: currentColor;
+    color: inherit;
+    text-decoration: none;
+    &a:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .photo {
+    min-height: 250px;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.6;
+  }
+
+  .text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 10px;
+    color: $SWhite;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+
+  p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.8;
+  }
+}
+
+@media (min-width: 1000px) {
+  .listC {
+    article {
+      flex: 1 1 25%;
+    }
+  }
+}
+
+//////  End of list-c.html 記事一覧C

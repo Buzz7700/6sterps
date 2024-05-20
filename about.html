@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja ">
+  <head>
+    <meta charset="UTF-8" />
+    <title>アバウト</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- google フォント -->
+
+    <!-- コンテンツA conA heroイメージで使うフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- jQuery ヘッダーのトグルボタン -->
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+
+    <!-- reset.css リセットCSS -->
+    <link rel="stylesheet" href="reset.css" />
+    <!-- style.css スタイルCSS -->
+    <link rel="stylesheet" href="/style_css/style.css" />
+
+    <!-- 代替テキストをブラウザに表示しないための設定 -->
+    <style>
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+      }
+    </style>
+
+    <!-- fontAwesome js -->
+    <script src="https://use.fontawesome.com/926fe18a63.js"></script>
+  </head>
+  <body class="nohero">
+    <!-- header ヘッダー -->
+    <header>
+      <div class="container">
+        <div class="container-small">
+          <!-- headA -->
+          <a href="index.html" class="headA">LOGGER</a>
+
+          <button type="button" class="headC">
+            <span class="fa fa-bars" title="MENU"></span>
+          </button>
+        </div>
+        <!-- End of headA -->
+
+        <!-- headB -->
+        <nav class="headB">
+          <ul>
+            <li><a href="index.html">トップ</a></li>
+            <li><a href="contents.html">コンテンツ</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+          </ul>
+        </nav>
+        <!-- End of headB -->
+
+        <!-- headC -->
+        <!-- End of headC -->
+      </div>
+    </header>
+    <!-- End of header -->
+
+    <!-- about.html -->
+    <article class="post">
+      <div class="container">
+        <h1>LOGGERについて</h1>
+
+        <p>
+          LOGGERはライフログに関する情報の発信、アプリ開発、データの分析、ユーザーサポートを行うために設立された会社です。ライフログのサービスやデータを活用することで、日々の生活を楽しみ、よりよくしていくことを目指しています。
+        </p>
+
+        <p>
+          近年はグローバルワールドネットワークとも提携し、国内のみならず、海外展開も含めて活動の場をひろげています。
+        </p>
+      </div>
+    </article>
+
+    <aside class="history">
+      <div class="container">
+        <div class="photo"></div>
+        <div class="text">
+          <h2>History</h2>
+          <table>
+            <tr>
+              <th>2010年4月</th>
+              <td>LOGGER設立</td>
+            </tr>
+            <tr>
+              <th>2012年6月</th>
+              <td>オンラインマガジン創刊</td>
+            </tr>
+            <tr>
+              <th>2014年12月</th>
+              <td>海外企業と提携してオンラインデータ共有事業をスタート</td>
+            </tr>
+            <tr>
+              <th>2015年1月</th>
+              <td>ライフログアプリをリリース</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </aside>
+    <!-- End of about.html -->
+
+    <!-- footer フッター -->
+    <footer>
+      <div class="container">
+        <!-- footA -->
+        <div class="footA">
+          <h2>LOGGER</h2>
+          <p>
+            〒000-0000 東京都中央区杉並3-3-3-403<br />
+            <a href="http://logger.nett/">http://logger.nett/</a>
+          </p>
+
+          <!-- footD -->
+          <!-- SNSのロゴが表示されないが、書籍に記載された公式サンプルデータにおいても同様であった。要調査 -->
+          <nav class="footD">
+            <ul>
+              <li>
+                <a href="#">
+                  <span class="fa fa-twitter"></span>
+                  <span class="sr-only">Twitter</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <span class="fa fa-facebook"></span>
+                  <span class="sr-only">Facebook</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <span class="fa fa-google-plus"></span>
+                  <span class="sr-only">Google Plus</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <span class="fa fa-instagram"></span>
+                  <span class="sr-only">Instagram</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <span class="fa fa-youtube"></span>
+                  <span class="sr-only">YouTube</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- End of footD -->
+        </div>
+        <!-- End of footA -->
+
+        <!-- footB -->
+        <nav class="footB">
+          <div>
+            <h3>ABOUT</h3>
+            <ul>
+              <li><a href="#"></a>設立</li>
+              <li><a href="#"></a>所在地</li>
+              <li><a href="#"></a>地図</li>
+              <li><a href="#"></a>スタッフ</li>
+            </ul>
+          </div>
+          <div>
+            <h3>SUPPORT</h3>
+            <ul>
+              <li><a href="#"></a>ダウンロード</li>
+              <li><a href="#"></a>マニュアル</li>
+              <li><a href="#"></a>よくある質問</li>
+              <li><a href="#"></a>お問い合わせ</li>
+            </ul>
+          </div>
+          <div>
+            <h3>CONTENTS</h3>
+            <ul>
+              <li><a href="#"></a>お知らせ</li>
+              <li><a href="#"></a>ビジネス</li>
+              <li><a href="#"></a>プロフィール</li>
+              <li><a href="#"></a>開発者</li>
+              <li><a href="#"></a>ブログ</li>
+            </ul>
+          </div>
+        </nav>
+        <!-- End of footB -->
+
+        <!-- footC -->
+        <div class="footC">© LOGGER corp. All rights reserved.</div>
+        <!-- End of footC -->
+      </div>
+    </footer>
+    <!-- End of footer -->
+  </body>
+</html>
