@@ -409,7 +409,7 @@ footer .container .footC {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 30px;
-  box-shadow: 0 0 0 1px;
+  box-shadow: 0 0 0 1px #888;
   border: solid 3px currentColor;
   border-radius: 6px;
   background-color: #bf6a7a;
