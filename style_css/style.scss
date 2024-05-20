@@ -104,6 +104,7 @@ header {
   // End of headB
 }
 
+// index.html以外のヘッダーレイアウト
 .nohero {
   header {
     position: static;
@@ -166,6 +167,69 @@ header {
     display: block !important;
   }
 }
+
+// ヘッダーのアレンジ編
+
+// head-color
+// .head-color {
+//   background-color: $MColor;
+//   color: $SWhite;
+//   .headA {
+//     background-color: transparent;
+//     color: inherit;
+//   }
+
+//   .headC {
+//     color: inherit;
+//   }
+// }
+
+// // End of head-color
+
+// //head-hero
+// .head-hero {
+//   color: $SWhite;
+//   .headA {
+//     color: inherit;
+//   }
+
+//   .headC {
+//     color: inherit;
+//     opacity: 1;
+//   }
+// }
+
+// @media (max-width: 767px) {
+//   .head-hero {
+//     .headB {
+//       background-color: rgba(0, 0, 0, 0.6);
+//     }
+//   }
+// }
+
+// // End of head-hero
+
+// // head-fixed
+// .head-fixed,
+// .nohero .head-fixed {
+//   position: fixed;
+// }
+
+// .nohero .head-fixed + * {
+//   margin-top: 70px;
+// }
+
+// @media (max-width: 767px) {
+//   .head-hero {
+//     .headB {
+//       background-color: rgba(0, 0, 0, 0.6);
+//     }
+//   }
+// }
+
+// End of head-fixed
+
+// End of ヘッダーのアレンジ編
 
 //// End of header
 
@@ -268,6 +332,7 @@ footer {
           &:not(:first-child) {
             // 学習メモ:否定擬似クラスで最初の要素以外にmargin-left:40pxを付与する
             margin-left: 40px;
+            font-size: 12px;
           }
         }
       }
@@ -340,7 +405,6 @@ footer {
     margin-bottom: 10px;
     font-family: "Montserrat", sans-serif;
     font-size: 15vw;
-    font-weight: 500;
     letter-spacing: 0.2em;
     margin-left: 0.2em;
   }
@@ -635,7 +699,7 @@ footer {
   }
 }
 
-// パンクズリスト
+// パンクズリスト(ネストが深くなりすぎるので.containerのネストの外に記述した)
 .bread {
   ol {
     display: flex;
@@ -661,6 +725,68 @@ footer {
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.related {
+  background-color: $MColor;
+  padding: 30px 0;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: $LWidth;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    flex: 1 1 100%;
+    display: flex;
+  }
+
+  a {
+    flex: 1;
+    margin: 10px;
+    display: block;
+    border: solid 1px $GColor;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .photo {
+    min-height: 100px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .text {
+    margin: 10px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .related li {
+    flex: 1 1 50%;
+  }
+}
+
+@media (min-width: 900px) {
+  .related li {
+    flex: 1 1 25%;
   }
 }
 
@@ -779,21 +905,23 @@ footer {
   }
 }
 
-.location iframe {
-  width: 100%;
-  height: 400px;
-  vertical-align: bottom;
-}
+.location {
+  iframe {
+    width: 100%;
+    height: 400px;
+    vertical-align: bottom;
+  }
 
-.location h2 {
-  margin: 0;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-color: #5d9ab2;
-  background-color: $MColor;
-  color: $SWhite;
-  font-size: 1.5rem;
-  text-align: center;
+  h2 {
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #5d9ab2;
+    background-color: $MColor;
+    color: $SWhite;
+    font-size: 1.5rem;
+    text-align: center;
+  }
 }
 
 ////// End of contact.html お問い合わせ
@@ -904,6 +1032,7 @@ footer {
     opacity: 0.8;
   }
 }
+
 @media (max-width: 384px) {
   .listB {
     .photo {
